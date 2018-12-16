@@ -1,0 +1,3 @@
+[submodule "playground/petitioneering"]
+	path = playground/petitioneering
+	url = https://github.com/compose-ex/petitioneering.git
