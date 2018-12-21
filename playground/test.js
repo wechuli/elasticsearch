@@ -13,3 +13,6 @@ const createIndex = async () => {
 
 
 createIndex()
+
+
+client.indices.putMapping
