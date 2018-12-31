@@ -2,8 +2,8 @@ const client = require("./connection");
 
 client.indices
   .getMapping({
-    index: "gov",
+    index: "govcon",
     type: "constituencies"
   })
-  .then(data => console.log(data.gov.mappings.constituencies.properties))
+  .then(data => console.log(data.govcon.mappings.constituencies.properties))
   .catch(err => console.log(err));

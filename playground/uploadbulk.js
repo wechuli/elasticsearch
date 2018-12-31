@@ -6,7 +6,7 @@ const body = [];
 async function createbulk(dataObjects) {
   dataObjects.map(dataObject => {
     body.push({
-      index: { _index: "gov", _type: "constituencies", _id: dataObject.PANO }
+      index: { _index: "govcon", _type: "constituencies", _id: dataObject.PANO }
     });
     body.push(dataObject);
   });

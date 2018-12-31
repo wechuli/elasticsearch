@@ -2,21 +2,19 @@ const client = require("./connection");
 
 client.indices
   .putMapping({
-    index: "gov",
+    index: "govcon",
     type: "constituencies",
     body: {
-      "constituencies": {
-        properties: {
-          constituencyname: {
-            type: "string", // type is a required attribute if index is specified
-            index: "not_analyzed"
-          },
-          electorate: {
-            type: "integer"
-          },
-          validvotes: {
-            type: "integer"
-          }
+      properties: {
+        ConstituencyName: {
+          type: "keyword" // type is a required attribute if index is specified-not this is the syntax for non-analyzed fields, elasticsearch will not try to tokenize this field
+          
+        },
+        Electorate: {
+          type: "integer"
+        },
+        ValidVotes: {
+          type: "integer"
         }
       }
     }

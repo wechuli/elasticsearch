@@ -1,7 +1,7 @@
 const client = require("./connection.js");
 client.indices
   .create({
-    index: "govcon"
+    index: "govpet"
   })
   .then(response => {
     console.log("Your Index has been created: ", response);

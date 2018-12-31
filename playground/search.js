@@ -7,7 +7,7 @@ client
     ignore: [404],
     body: {
       query: {
-        wildcard: { ConstituencyName: "???wich" }
+        match: {'ConstituencyName':'Ipswich'}
       }
     }
   })
