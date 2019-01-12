@@ -12,3 +12,12 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+.cardContainer{
+  display: flex;
+}
+.customCard{
+  height: 15%;
+  width: 30%;
+  background: brown;
+  margin:3px
+}

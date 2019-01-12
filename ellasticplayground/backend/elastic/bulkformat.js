@@ -28,25 +28,25 @@ const formatJson = [
   }
 ];
 
+const prepareddata = [];
+
 const uploadBulk = async data => {
-  const prepared = await data.map(inst => {
-    return (
-      {
-        index: {
-          _index: "worldpopulation",
-          _type: "population",
-          _id: data.inst
-        }
-      },
-      {
-        rank: parseInt(inst.Rank),
-        country: inst.country,
-        population: parseInt(inst.population),
-        world: parseFloat(inst.World)
+  await data.forEach(inst => {
+    prepareddata.push({
+      index: {
+        _index: "worldpopulation",
+        _type: "population",
+        _id: inst.Rank
       }
-    );
+    });
+    prepareddata.push({
+      rank: parseInt(inst.Rank),
+      country: inst.country,
+      population: parseInt(inst.population),
+      world: parseFloat(inst.World)
+    });
   });
-  console.log(prepared);
 };
 
 uploadBulk(formatJson);
+console.log(prepareddata);
